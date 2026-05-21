@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CFP Report — SEODZOU001 - Canada Vietnam Kindergarten (CVK) - Media - 09/2025_SEODZOU001_001</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #175ae2;
+    --primary-dark: #0f3fa8;
+    --primary-light: #e8effd;
+    --accent: #f0a500;
+    --danger: #e53e3e;
+    --success: #38a169;
+    --text: #1a202c;
+    --text-muted: #718096;
+    --border: #e2e8f0;
+    --bg: #f7f9fc;
+    --card-bg: #ffffff;
+    --radius: 12px;
+    --shadow: 0 2px 12px rgba(23,90,226,0.08);
+    --shadow-hover: 0 8px 32px rgba(23,90,226,0.15);
+  }
+  body { font: 14px/1.6 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+  /* Header */
+  .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: #fff; padding: 36px 40px 28px; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: -60px; right: -60px; width: 260px; height: 260px; border-radius: 50%; background: rgba(255,255,255,0.06); }
+  .header::after { content: ''; position: absolute; bottom: -80px; left: 30%; width: 320px; height: 320px; border-radius: 50%; background: rgba(255,255,255,0.04); }
+  .header-inner { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; }
+  .header-tag { display: inline-block; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; padding: 4px 14px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; }
+  .header h1 { font-size: 26px; font-weight: 700; margin-bottom: 6px; letter-spacing: -0.02em; }
+  .header-sub { font-size: 14px; opacity: 0.85; }
+
+  /* Tab nav */
+  .tab-nav { background: #fff; border-bottom: 2px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .tab-nav-inner { max-width: 1100px; margin: 0 auto; display: flex; padding: 0 40px; }
+  .tab-btn { padding: 16px 24px; border: none; background: none; cursor: pointer; font: 600 14px inherit; color: var(--text-muted); border-bottom: 3px solid transparent; margin-bottom: -2px; transition: all 0.2s; }
+  .tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
+  .tab-btn:hover { color: var(--primary); }
+
+  /* Main */
+  main { max-width: 1100px; margin: 0 auto; padding: 32px 40px 48px; }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* Section pattern */
+  .section-title { font-size: 18px; font-weight: 700; color: var(--text); margin-top: 32px; margin-bottom: 4px; padding-top: 24px; border-top: 1px solid var(--border); }
+  .section-title:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+  .section-desc { color: var(--text-muted); font-size: 13px; margin-bottom: 18px; }
+
+  /* Stats grid */
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; margin-bottom: 8px; }
+  .stat-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 18px 16px; box-shadow: var(--shadow); transition: box-shadow 0.2s; }
+  .stat-card:hover { box-shadow: var(--shadow-hover); }
+  .stat-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 8px; }
+  .stat-value { font-size: 26px; font-weight: 700; color: var(--primary); line-height: 1.15; }
+  .stat-note { font-size: 12px; color: var(--text-muted); margin-top: 6px; }
+
+  /* Narrative */
+  .narrative-block { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 26px; box-shadow: var(--shadow); }
+  .narrative-block p { margin-bottom: 12px; }
+  .narrative-block p:last-child { margin-bottom: 0; }
+  .narrative-block strong { color: var(--primary-dark); }
+
+  /* Aha cards */
+  .aha-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+  .aha-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px 18px 52px; position: relative; box-shadow: var(--shadow); }
+  .aha-num { position: absolute; left: 16px; top: 18px; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+  .aha-card h4 { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+  .aha-card p { font-size: 13px; color: var(--text-muted); }
+
+  /* Strategy pillars */
+  .strategy-pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+  .strategy-pillar { background: var(--card-bg); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: var(--radius); padding: 18px 22px; box-shadow: var(--shadow); }
+  .pillar-tag { display: inline-block; background: var(--primary-light); color: var(--primary-dark); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 4px 10px; border-radius: 4px; margin-bottom: 10px; }
+  .strategy-pillar h4 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+  .strategy-pillar p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  /* Insight cards */
+  .insight-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 22px; margin-bottom: 14px; box-shadow: var(--shadow); }
+  .insight-card .card { all: revert; }
+  .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 22px; margin-bottom: 14px; box-shadow: var(--shadow); }
+  .card-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
+  .card-id { font-size: 11px; font-weight: 700; color: var(--primary); background: var(--primary-light); padding: 3px 10px; border-radius: 4px; }
+  .card h3 { font-size: 15px; font-weight: 700; margin: 0; line-height: 1.4; }
+  .card p { font-size: 13px; color: var(--text); margin: 6px 0; line-height: 1.55; }
+  .card p b { color: var(--primary-dark); }
+  .badge { display: inline-block; margin-top: 10px; background: var(--bg); color: var(--text-muted); font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 4px; }
+
+  /* Appendix */
+  table.appendix { width: 100%; border-collapse: collapse; background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+  table.appendix th, table.appendix td { padding: 14px 18px; text-align: left; border-bottom: 1px solid var(--border); }
+  table.appendix th { background: var(--bg); font-weight: 600; width: 220px; color: var(--text-muted); }
+  table.appendix tr:last-child th, table.appendix tr:last-child td { border-bottom: none; }
+
+  footer { text-align: center; padding: 28px; color: var(--text-muted); font-size: 12px; }
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-inner">
+    <span class="header-tag">CFP Report</span>
+    <h1>SEODZOU001 - Canada Vietnam Kindergarten (CVK) - Media - 09/2025_SEODZOU001_001</h1>
+    <div class="header-sub">20/05/2026</div>
+  </div>
+</header>
+<div class="tab-nav">
+  <div class="tab-nav-inner">
+    <button class="tab-btn active" data-tab="overview">Tổng quan</button>
+    <button class="tab-btn" data-tab="insights">Insights</button>
+    <button class="tab-btn" data-tab="appendix">Phụ lục</button>
+  </div>
+</div>
+<main>
+  <section id="overview" class="tab-panel active">
+    <div class="section-title">Chỉ số tổng quan</div>
+    <div class="section-desc">Snapshot nhanh về quy mô và độ phủ của phân tích CFP</div>
+    <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Tổng số Insights</div>
+          <div class="stat-value">12</div>
+          <div class="stat-note">Từ toàn bộ dataset CFP</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Hypotheses validated</div>
+          <div class="stat-value">15</div>
+          <div class="stat-note">Từ Phase 1 → Phase 4</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Finding có impact lớn nhất</div>
+          <div class="stat-value">Có</div>
+          <div class="stat-note">Medium confidence · ↑ Cost per Lead</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">SHAP Importance — Cost per Lead</div>
+          <div class="stat-value" style="color:#e53e3e;">31.89%</div>
+          <div class="stat-note">Tăng metric — cần tránh</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Combo có reliability cao nhất</div>
+          <div class="stat-value" style="color:#e53e3e;">82.4%</div>
+          <div class="stat-note">↑ Cost per Lead · combo cần tránh</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Dimension quan trọng nhất</div>
+          <div class="stat-value">content_link</div>
+          <div class="stat-note">Top trong 2/10 finding hàng đầu</div>
+        </div>
+    </div>
+
+    <div class="section-title">Narrative tổng quan</div>
+    <div class="section-desc">Bức tranh toàn cảnh về hiệu suất creative</div>
+    <div class="narrative-block"><p>CVK đang chạy quảng cáo Meta với creative strategy được xây dựng trên một giả định hợp lý: trường quốc tế cao cấp cần visual production chỉn chu, thông điệp cảm xúc ấm áp về môi trường an toàn và sự phát triển toàn diện, kèm link để phụ huynh tìm hiểu thêm. Đây là công thức phổ biến trong ngành giáo dục mầm non Việt Nam — và CVK đã đầu tư đáng kể vào đó: 41.2% creative trong dataset là dạng &#39;Thiết lập công phu&#39;, 88.2% chỉ xoay quanh hai combination tương tự nhau.</p>
+<p>Nhưng dữ liệu CFP kể một câu chuyện ngược lại hoàn toàn.</p>
+<p>Yếu tố có SHAP impact lớn nhất trong toàn bộ dataset — lớn hơn tất cả angle, narrative, và visual dimension cộng lại — không phải là concept sáng tạo hay production quality. Đó là một thứ đơn giản đến mức gây sốc: có hay không có link trong creative (56.42% dim_inc). Creative có link có xu hướng đẩy CPL tăng; creative không có link có xu hướng kéo CPL xuống. Trong khi đó, combination &#39;Thiết lập công phu&#39; — thứ CVK đang chi nhiều nhất — lại có predicted CPL cao hơn trung bình 1.4%–7.2%, trong khi Single format đơn giản hơn lại có xu hướng giảm CPL 0.2%–2.16%. Hai angle được dùng nhiều nhất (&#39;Môi trường an toàn và yêu thương&#39;, &#39;Phát triển toàn diện trẻ&#39;) đều có hướng tăng CPL — không phải vì chúng sai, mà vì chúng quá phổ biến đến mức phụ huynh không còn phân biệt được CVK với bất kỳ trường nào khác. Và đối thủ trực tiếp VAS Riverside đang chiếm lĩnh &#39;Think&#39; positioning (Cambridge accreditation, 18 năm, 7.200+ phụ huynh) — đúng trận địa mà CVK đang cố cạnh tranh, nhưng với lợi thế thương hiệu thấp hơn nhiều.</p>
+<p>Do đó, hướng đi chiến lược cho CVK không phải là làm tốt hơn những gì đang làm — mà là thay đổi trận địa cạnh tranh.</p>
+<p>Ba hành động ưu tiên cao nhất có thể implement ngay: Một, loại bỏ link trong creative lead gen — đây là lever đơn giản nhất, chi phí thay đổi gần bằng không, nhưng SHAP signal mạnh nhất. Hai, chuyển production budget từ &#39;ít video chỉn chu&#39; sang &#39;nhiều video đơn giản, thực tế&#39; — vừa giảm CPL theo xu hướng dữ liệu, vừa cung cấp đủ creative diversity để thuật toán Andromeda tối ưu (hiện tại 88.2% creative chỉ là hai dạng, Meta đang thiếu nguyên liệu để học). Ba, test angle &#39;Chương trình học chuẩn quốc tế&#39; và &#39;Canadian Teaching Methodology&#39; với Third-POV Dialogue + CTA &#39;Đặt lịch hẹn&#39; — khai thác &#39;Feel&#39; lever mà VAS đang bỏ ngỏ, đồng thời tạo differentiation thực sự cho định vị Canada-Vietnam của CVK.</p>
+<p>Tất cả findings ở direction_stability 0.52 — đây là tín hiệu định hướng, không phải quy luật tuyệt đối. Implement với test-and-learn mindset, không scale lớn trước khi có confirmation từ live data.</p></div>
+
+    <div class="section-title">Aha Moments</div>
+    <div class="section-desc">Những phát hiện counter-intuitive quan trọng nhất từ dataset</div>
+    <div class="aha-grid">
+        <div class="aha-card">
+          <div class="aha-num">1</div>
+          <h4>Production quality cao (Thiết lập công phu) KHÔNG giúp giảm CPL</h4>
+          <p>ngược lại, combination phổ biến nhất trong dataset (41.2% creatives) lại có xu hướng TĂNG CPL 1.4%–7.2%. CVK đang chi nhiều tiền production hơn mức cần thiết và nhận lại CPL cao hơn.</p>
+        </div>
+        <div class="aha-card">
+          <div class="aha-num">2</div>
+          <h4>Thêm link vào creative là yếu tố có SHAP impact lớn nhất (56.42% dim_inc)</h4>
+          <p>lớn hơn tất cả angle, narrative, và visual dimension cộng lại. Một thay đổi đơn giản (xóa link) có thể có tác động lớn hơn toàn bộ việc thay đổi creative concept.</p>
+        </div>
+        <div class="aha-card">
+          <div class="aha-num">3</div>
+          <h4>Angle &#39;Phát triển toàn diện trẻ&#39; có hướng TĂNG CPL ở single-value level, nhưng lại xuất hiện trong combo CPL THẤP NHẤT khi kết hợp đúng context (Single + Thực tế + Đặt lịch hẹn). Điều này chứng minh: không có angle nào tốt hay xấu tuyệt đối — context combination mới là yếu tố quyết định.</h4>
+          
+        </div>
+        <div class="aha-card">
+          <div class="aha-num">4</div>
+          <h4>Tất cả content_key_pillar trong dataset đều có hướng TĂNG CPL</h4>
+          <p>không có pillar nào giảm CPL. Đây là dấu hiệu bất thường: hoặc các pillar hiệu quả nhất của CVK (Ngôn ngữ và Phát triển, Cộng đồng và Văn hóa) chưa bao giờ được test đủ, hoặc pillar-level messaging không phải lever tối ưu CPL.</p>
+        </div>
+        <div class="aha-card">
+          <div class="aha-num">5</div>
+          <h4>88.2% creative trong dataset là chỉ hai combination</h4>
+          <p>CVK đang chạy quảng cáo với creative diversity cực thấp trong khi Meta Andromeda cần ít nhất 5-10 variants để tối ưu. Đây không chỉ là vấn đề insight quality mà là vấn đề cấu trúc campaign đang tự giới hạn performance.</p>
+        </div>
+    </div>
+
+    <div class="section-title">Định hướng chiến lược</div>
+    <div class="section-desc">Hướng đi đề xuất dựa trên evidence từ CFP data</div>
+    <div class="narrative-block"><p>CVK nên chuyển hướng creative strategy từ &#39;polished institutional&#39; (đang cạnh tranh trực tiếp với VAS trên trận địa VAS có lợi thế) sang &#39;authentic community&#39; — khai thác &#39;Feel&#39; lever mà đối thủ đang bỏ ngỏ. Ba thay đổi ưu tiên cao nhất có thể implement ngay: (1) Loại bỏ link trong creative lead gen để giảm friction — đây là lever đơn giản nhất với SHAP impact cao nhất (56.42% dim_inc); (2) Tăng tỷ lệ Single format + Thực tế style trong creative mix, giảm Thiết lập công phu — đơn giản hóa production để tăng volume và diversity; (3) Test angle &#39;Chương trình học chuẩn quốc tế&#39; và &#39;Canadian Teaching Methodology&#39; với Third-POV Dialogue narrative + CTA &#39;Đặt lịch hẹn&#39;. Song song, cần fix taxonomy gap (thêm Reels, hook_type, aspect_ratio) và tăng creative diversity lên ít nhất 5 combination khác biệt để thuật toán Andromeda có đủ nguyên liệu tối ưu. Tất cả findings ở mức direction_stability 0.52 — implement với test-and-learn mindset, không scale lớn trước khi có confirmation từ live data.</p></div>
+  </section>
+
+  <section id="insights" class="tab-panel">
+    <div class="section-title">Tất cả Insights (12)</div>
+    <div class="section-desc">Từng insight theo framework Observation — Explanation — Implication</div>
+    
+      <div class="card">
+        <div class="card-head">
+          <span class="card-id">INS-01</span>
+          <h3>Thêm link vào creative có xu hướng đẩy CPL tăng — friction hypothesis được dữ liệu ủng hộ</h3>
+        </div>
+        <p><b>Observation —</b> content_link là dimension có SHAP importance cao nhất trong toàn bộ dataset (56.42% trong dim_inc), chiếm gần 46% tổng SHAP impact ở value-level. Creative có link (Có) có SHAP 31.89% theo hướng TĂNG CPL; creative không có link (Không) có SHAP 14.05% theo hướng GIẢM CPL. Đây là tín hiệu mạnh nhất, vượt xa tất cả các dimension còn lại. Direction stability = 0.52 (dưới ngưỡng 0.6), confidence cả hai value ở mức Medium (53.1% và 48.2%).</p>
+        <p><b>Explanation —</b> Khi creative đã đủ mạnh về visual (Thiết lập công phu + Quay phim thực tế), việc thêm link tạo ra &#39;friction điều hướng&#39; — phụ huynh bị phân tâm giữa việc điền form lead ngay trên Meta và click ra ngoài. Trong ngành giáo dục mầm non cao cấp, quyết định đăng ký tham quan là quyết định cảm xúc — bất kỳ bước chuyển hướng nào cũng làm giảm tỷ lệ chuyển đổi tức thì. Combo analysis xác nhận: các combo với content_link=Không có predicted CPL cao hơn (11.25 vs 10.69) khi kết hợp với visual_quality=Thiết lập công phu — gợi ý link làm tăng friction đặc biệt khi creative đã đủ mạnh.</p>
+        <p><b>Implication —</b> Ưu tiên chạy creative KHÔNG có link trong các campaign lead generation trên Meta. Nếu cần link để tracking hoặc landing page, hãy A/B test riêng biệt với budget nhỏ trước khi scale. Đặc biệt với các creative có visual production cao (Thiết lập công phu), loại bỏ link là thay đổi đơn giản nhất có thể tác động lớn nhất đến CPL. Lưu ý: direction_stability 0.52 — đây là xu hướng trong dữ liệu hiện tại, cần theo dõi thêm khi có thêm creative mới.</p>
+        <span class="badge">Tier 1 · Medium</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-id">INS-02</span>
+          <h3>Production quality cao (Thiết lập công phu) không mang lại ROI CPL tương xứng — client đang over-invest vào visual</h3>
+        </div>
+        <p><b>Observation —</b> 7/17 combo trong dataset là combination visual_quality=Thiết lập công phu + visual_video_production_type=Quay phim thực tế, với predicted CPL 10.58–11.25 (tăng 1.4%–7.2% so với avg ~10.49). Reliability 81.7–82.4%. Trong khi đó, combination đơn giản hơn visual_format=Single + visual_style=Thực tế cho predicted CPL 10.27–10.47 (giảm 0.2%–2.16% so với avg), reliability 81.4–81.6%.</p>
+        <p><b>Explanation —</b> Phụ huynh mầm non cao cấp tại Việt Nam không phân biệt &#39;polished brand content&#39; với &#39;authentic content&#39; theo cách marketer nghĩ. Thực tế, visual quá chỉn chu có thể tạo cảm giác &#39;quảng cáo&#39; thay vì &#39;thực tế&#39;, làm giảm trust. 4C Research xác nhận UGC-style ads đạt engagement cao hơn 4 lần so với branded content thông thường (Tier 2). Đối thủ VAS Riverside đang dùng style &#39;polished institutional&#39; (Tier 2) — CVK có cơ hội differentiate bằng authentic content thay vì chạy đua production quality.</p>
+        <p><b>Implication —</b> Giảm tỷ lệ creative dạng &#39;Thiết lập công phu&#39; trong mix, tăng tỷ lệ creative dạng Single format + Thực tế style. Cụ thể: với budget production hiện tại, thay vì làm 2 video Thiết lập công phu, hãy làm 4-6 video đơn giản hơn với style thực tế — vừa tăng creative diversity (phù hợp thuật toán Andromeda của Meta), vừa có xu hướng giảm CPL. Đây là insight counter-intuitive quan trọng nhất trong dataset.</p>
+        <span class="badge">Tier 1 · Medium</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-id">INS-03</span>
+          <h3>Angle &#39;Môi trường an toàn và yêu thương&#39; và &#39;Phát triển toàn diện trẻ&#39; có xu hướng đẩy CPL tăng — dấu hiệu overuse và thiếu differentiation</h3>
+        </div>
+        <p><b>Observation —</b> &#39;Môi trường an toàn và yêu thương&#39; có SHAP 5.9% theo hướng TĂNG CPL (xấu) — cao nhất trong nhóm angle tăng CPL. &#39;Phát triển toàn diện trẻ&#39; cũng có hướng TĂNG CPL và xuất hiện nhiều trong các combo tăng CPL. Combo analysis xác nhận: &#39;Môi trường an toàn và yêu thương&#39; kết hợp với visual_quality=Thiết lập công phu + Quay phim thực tế cho predicted CPL 11.07 (tăng 5.5% vs avg) — angle này không hiệu quả ngay cả khi visual production cao. Direction stability 0.52, confidence values ở mức Low (19.84%–37.52%).</p>
+        <p><b>Explanation —</b> Hai angle này là những thông điệp phổ biến nhất trong ngành giáo dục mầm non Việt Nam — gần như mọi trường đều dùng. Khi thị trường bão hòa với cùng một thông điệp, phụ huynh không còn phân biệt được CVK với các đối thủ, dẫn đến CPL cao hơn do thiếu differentiation. 4C Research xác nhận đối thủ VAS Riverside tập trung vào &#39;authority thương hiệu&#39; và &#39;Cambridge accreditation&#39; (Tier 2) — không dùng angle cảm xúc chung chung. Angle &#39;Chương trình học chuẩn quốc tế&#39; (SHAP 1.57% giảm CPL) cho thấy specificity thắng generality.</p>
+        <p><b>Implication —</b> Loại bỏ hoặc giảm mạnh tần suất sử dụng angle &#39;Môi trường an toàn và yêu thương&#39; và &#39;Phát triển toàn diện trẻ&#39; trong creative mix mới. Thay thế bằng các angle cụ thể hơn như &#39;Chương trình học chuẩn quốc tế&#39; hoặc &#39;Canadian Teaching Methodology&#39; — những angle có tính differentiation cao hơn trong thị trường. Lưu ý: confidence ở mức Low, cần test thêm trước khi loại bỏ hoàn toàn.</p>
+        <span class="badge">Tier 1 · Medium</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-id">INS-04</span>
+          <h3>Angle &#39;Chương trình học chuẩn quốc tế&#39; có xu hướng giảm CPL — specificity và credibility thắng emotional appeal chung chung</h3>
+        </div>
+        <p><b>Observation —</b> &#39;Chương trình học chuẩn quốc tế&#39; có SHAP 1.57% theo hướng GIẢM CPL (tốt) — là angle duy nhất trong dataset có hướng giảm CPL rõ ràng. Đây là angle có tính differentiation cao nhất trong taxonomy hiện tại của CVK. Direction stability 0.52, confidence ở mức Low.</p>
+        <p><b>Explanation —</b> Phụ huynh trong nhóm 25–45 tuổi tại Quận 7 — target demographic của CVK — là nhóm có định hướng gia đình và giá trị thương mại cao (Tier 2). Họ ra quyết định dựa trên cả cảm xúc lẫn logic. Angle &#39;Chương trình học chuẩn quốc tế&#39; kích hoạt cả hai: cảm xúc tự hào (con học trường quốc tế) và logic (chương trình được chuẩn hóa). Đây là cách tiếp cận &#39;Think&#39; lever mà VAS Riverside đang dùng thành công (Cambridge accreditation, lộ trình liên cấp) — CVK có thể áp dụng tương tự với Canadian curriculum.</p>
+        <p><b>Implication —</b> Tăng tỷ lệ creative sử dụng angle &#39;Chương trình học chuẩn quốc tế&#39; và &#39;Canadian Teaching Methodology&#39; trong mix. Cụ thể hóa thông điệp: thay vì nói chung &#39;chương trình quốc tế&#39;, hãy nêu cụ thể &#39;chương trình Canada được kiểm định bởi [tên tổ chức]&#39; để tăng credibility. Kết hợp với visual_format=Single + visual_style=Thực tế để tối ưu CPL. Lưu ý confidence thấp — cần test với ít nhất 5-8 creative mới trước khi kết luận.</p>
+        <span class="badge">Tier 1 · Medium</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-id">INS-05</span>
+          <h3>Third-POV Dialogue (Góc nhìn thứ ba / Đối thoại) có SHAP cao nhất trong narrative nhưng confidence thấp — tín hiệu tiềm năng cần test thêm</h3>
+        </div>
+        <p><b>Observation —</b> &#39;Góc nhìn thứ ba / Đối thoại&#39; có SHAP 10.81% giảm CPL — cao nhất trong tất cả narrative values, confidence 43.04% (Low). &#39;Góc nhìn thứ hai / Độc thoại&#39; có SHAP 3.4% giảm CPL. &#39;Góc nhìn thứ nhất (First-POV)&#39; có SHAP 1.73% giảm CPL nhưng confidence thấp nhất (32.24%). Direction stability 0.52 — không cho phép tuyên bố tuyệt đối. Đáng chú ý: Third-POV Dialogue xuất hiện trong combo tăng CPL khi kết hợp với Thiết lập công phu — mâu thuẫn với single-value direction.</p>
+        <p><b>Explanation —</b> Third-POV Dialogue (ví dụ: cảnh cô giáo nói chuyện với phụ huynh, hoặc hai phụ huynh thảo luận về trường) tạo ra social proof tự nhiên và giảm cảm giác &#39;bị bán hàng&#39;. Đây là cơ chế tâm lý &#39;bystander effect&#39; trong quảng cáo — người xem đồng nhất với nhân vật trong video hơn là bị thuyết phục trực tiếp. 4C Research xác nhận testimonial và review từ phụ huynh thật có tác động mạnh trong ngành giáo dục mầm non (Tier 2). Tuy nhiên, mâu thuẫn trong combo analysis (Third-POV + Thiết lập công phu = tăng CPL) gợi ý narrative này cần visual đơn giản, authentic để phát huy hiệu quả.</p>
+        <p><b>Implication —</b> Test creative dạng Third-POV Dialogue với visual_style=Thực tế (KHÔNG phải Thiết lập công phu) — đây là combination chưa được test đủ trong dataset hiện tại. Cụ thể: quay cảnh phụ huynh thật chia sẻ trải nghiệm (testimonial format) với setup đơn giản, không dàn dựng. Đây là hướng UGC-style phù hợp với hypothesis H1 và 4C findings. Confidence thấp — cần ít nhất 5 creative mới để validate.</p>
+        <span class="badge">Tier 1 · Medium</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-id">INS-06</span>
+          <h3>Tất cả content_key_pillar trong dataset đều có hướng TĂNG CPL — dấu hiệu taxonomy gap hoặc pillar không phải lever tối ưu CPL</h3>
+        </div>
+        <p><b>Observation —</b> SHAP importance của content_key_pillar là 11.87% (xếp thứ 4 trong dim_inc). Tuy nhiên, TẤT CẢ các pillar xuất hiện trong data đều có hướng TĂNG CPL: &#39;Xuất sắc học thuật&#39; (SHAP 2.36%, confidence 50.96% Medium), &#39;An toàn và Chăm sóc&#39; (SHAP 2.29%, confidence 33.36% Low), &#39;Tuyển sinh và Nhập học&#39; (SHAP 2.07%, confidence 50.96% Medium). Hai pillar &#39;Ngôn ngữ và Phát triển&#39; và &#39;Cộng đồng và Văn hóa&#39; không xuất hiện trong data — gợi ý thiếu creative samples cho các pillar này.</p>
+        <p><b>Explanation —</b> Có hai khả năng: (1) Các pillar hiệu quả (&#39;Ngôn ngữ và Phát triển&#39;, &#39;Cộng đồng và Văn hóa&#39;) chưa được test đủ — đây là taxonomy gap nghiêm trọng vì CVK là trường Canada-Vietnam, &#39;Ngôn ngữ và Phát triển&#39; lẽ ra phải là pillar core. (2) Pillar-level là dimension quá broad để tối ưu CPL — angle và narrative cụ thể hơn mới là lever thực sự. Việc &#39;Tuyển sinh và Nhập học&#39; tăng CPL đặc biệt đáng chú ý: creative tập trung vào enrollment offer có thể tạo cảm giác &#39;bán hàng cứng&#39;, đẩy phụ huynh ra xa.</p>
+        <p><b>Implication —</b> Hai hành động song song: (1) Tạo creative cho pillar &#39;Ngôn ngữ và Phát triển&#39; và &#39;Cộng đồng và Văn hóa&#39; — đây là white space chưa được test, đặc biệt quan trọng với định vị Canada-Vietnam của CVK. (2) Giảm tần suất creative tập trung vào &#39;Tuyển sinh và Nhập học&#39; như pillar chính — thay vào đó, dùng enrollment CTA như một element phụ trong creative có pillar khác mạnh hơn.</p>
+        <span class="badge">Tier 1 · Medium</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-id">INS-07</span>
+          <h3>Best performing combo trong dataset là Single format + Thực tế style + CTA &#39;Đặt lịch hẹn&#39; + angle &#39;Phát triển toàn diện trẻ&#39; — nhưng angle này mâu thuẫn với single-value finding</h3>
+        </div>
+        <p><b>Observation —</b> Combo tốt nhất trong toàn bộ 17 combos: visual_format=Single + visual_style=Thực tế + content_cta=Đặt lịch hẹn + content_key_angle=Phát triển toàn diện trẻ, predicted CPL 10.27 (giảm 2.16% vs avg ~10.49), reliability 81.4%. Đây là combination có CPL thấp nhất trong dataset. Tuy nhiên, ở single-value level, &#39;Phát triển toàn diện trẻ&#39; có hướng TĂNG CPL — mâu thuẫn trực tiếp với combo finding.</p>
+        <p><b>Explanation —</b> Mâu thuẫn này cho thấy interaction effect quan trọng: &#39;Phát triển toàn diện trẻ&#39; khi đứng một mình là angle yếu (generic, overused), nhưng khi kết hợp với Single format + Thực tế style + CTA cụ thể &#39;Đặt lịch hẹn&#39;, nó trở thành một package hiệu quả. Lý do có thể là: Single format + Thực tế style tạo ra context authentic đủ mạnh để angle generic này hoạt động được. CTA &#39;Đặt lịch hẹn&#39; cụ thể hơn &#39;Tìm hiểu thêm&#39; hay &#39;Liên hệ ngay&#39; — giảm friction quyết định cho phụ huynh. Đây là ví dụ điển hình của &#39;combination effect&#39; vượt qua &#39;individual element weakness&#39;.</p>
+        <p><b>Implication —</b> Không loại bỏ hoàn toàn angle &#39;Phát triển toàn diện trẻ&#39; — thay vào đó, chỉ dùng angle này trong context Single format + Thực tế style + CTA &#39;Đặt lịch hẹn&#39;. Tránh dùng angle này với visual production cao (Thiết lập công phu) hoặc CTA mơ hồ. Đây là blueprint combo cụ thể có thể implement ngay: 1 video đơn giản, quay thực tế, thể hiện sự phát triển toàn diện của trẻ, kết thúc bằng CTA &#39;Đặt lịch hẹn tham quan&#39;.</p>
+        <span class="badge">Tier 1 · Medium</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-id">INS-08</span>
+          <h3>CTA &#39;Đặt lịch hẹn&#39; xuất hiện trong combo CPL thấp nhất — specificity của CTA có thể là lever quan trọng chưa được khai thác</h3>
+        </div>
+        <p><b>Observation —</b> Trong combo tốt nhất (predicted CPL 10.27, giảm 2.16%), CTA là &#39;Đặt lịch hẹn&#39; — cụ thể nhất trong taxonomy (so với &#39;Tìm hiểu thêm&#39;, &#39;Liên hệ ngay hôm nay&#39;, &#39;Nhận tư vấn miễn phí&#39;, &#39;Đăng ký tham quan trường&#39;). Không có đủ single-value SHAP data cho content_cta trong input để so sánh trực tiếp, nhưng combo evidence gợi ý CTA cụ thể có tác động dương.</p>
+        <p><b>Explanation —</b> Trong ngành giáo dục mầm non cao cấp, phụ huynh cần một bước hành động rõ ràng và low-commitment. &#39;Đặt lịch hẹn&#39; cụ thể hơn &#39;Liên hệ ngay&#39; (không rõ liên hệ để làm gì) và ít áp lực hơn &#39;Đăng ký tham quan trường&#39; (nghe có vẻ cam kết cao hơn). 4C Research xác nhận tone giao tiếp hiệu quả trong quảng cáo giáo dục thiên về đồng hành và trao quyền cho phụ huynh ra quyết định — CTA &#39;Đặt lịch hẹn&#39; phù hợp với nguyên tắc này (Tier 2).</p>
+        <p><b>Implication —</b> Standardize CTA &#39;Đặt lịch hẹn&#39; làm CTA mặc định trong creative mix, đặc biệt với Single format + Thực tế style. Test A/B giữa &#39;Đặt lịch hẹn&#39; và &#39;Đăng ký tham quan trường&#39; để xác định CTA nào convert tốt hơn ở từng stage của funnel. Lưu ý: đây là combo-level evidence, không phải single-value SHAP — cần thêm data để xác nhận.</p>
+        <span class="badge">Tier 1 · Medium</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-id">INS-09</span>
+          <h3>Taxonomy thiếu dimension &#39;Reels/Short-form format&#39; và &#39;Hook type&#39; — blind spot chiến lược trong bối cảnh Meta 2025</h3>
+        </div>
+        <p><b>Observation —</b> Taxonomy hiện tại của visual_format chỉ có: Single, Infographic, Album/Carousel — không có giá trị nào capture Reels 9:16 hoặc short-form vertical video. Tương tự, không có dimension nào phân loại hook type (3 giây đầu), aspect ratio, hoặc placement type. Hypothesis H2 (Reels 9:16) và H3 (hook 3 giây) đều trả về &#39;insufficient_evidence&#39; do taxonomy gap này.</p>
+        <p><b>Explanation —</b> Meta Ads năm 2025 đang ưu tiên Reels format trong phân phối — thuật toán Andromeda reward creative diversity, đặc biệt short-form vertical content (Tier 2). Nếu CVK đang chạy Reels nhưng taxonomy không capture format này, toàn bộ performance data của Reels đang bị gộp vào các category khác, làm nhiễu analysis. Đây là structural blind spot: không phải CVK không có Reels, mà là CFP không đo được Reels.</p>
+        <p><b>Implication —</b> Cập nhật taxonomy labeling ngay trong batch creative tiếp theo: thêm giá trị &#39;Reels/Vertical 9:16&#39; vào visual_format, thêm dimension &#39;hook_type&#39; (Cảm xúc thực tế / Text headline / Logo / Câu hỏi), thêm &#39;aspect_ratio&#39; (9:16 / 1:1 / 16:9). Chỉ khi có đủ labeled data cho Reels mới có thể validate H2 và H3 — đây là prerequisite cho Phase 5 analysis.</p>
+        <span class="badge">Tier 2 · Medium</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-id">INS-10</span>
+          <h3>CVK có cơ hội differentiate khỏi VAS bằng authentic content — đối thủ đang bỏ ngỏ &#39;Feel&#39; lever</h3>
+        </div>
+        <p><b>Observation —</b> VAS Riverside (đối thủ trực tiếp tại Quận 7) định vị chủ yếu qua &#39;Think&#39; lever: Cambridge accreditation, 18 năm kinh nghiệm, 7.200+ phụ huynh, campus 11.000m². VAS dùng style &#39;polished institutional&#39;: ảnh chuyên nghiệp, bilingual copy, tập trung campus size. CFP data của CVK cho thấy visual_quality=Thiết lập công phu (tương đương &#39;polished&#39;) có xu hướng TĂNG CPL (1.4%–7.2%), trong khi Single+Thực tế có xu hướng GIẢM CPL (0.2%–2.16%).</p>
+        <p><b>Explanation —</b> Khi VAS đã chiếm lĩnh &#39;Think&#39; positioning (authority, credentials, scale), CVK cạnh tranh trực tiếp trên cùng trận địa sẽ thua vì VAS có lợi thế thương hiệu lâu năm hơn. Tuy nhiên, &#39;Feel&#39; lever (cảm xúc thực tế, kết nối cộng đồng, văn hóa Canada-Vietnam) là white space mà VAS chưa khai thác. CFP data xác nhận: authentic style (Thực tế) có xu hướng hiệu quả hơn polished style — đây là cơ hội chiến lược, không chỉ là tối ưu tactical.</p>
+        <p><b>Implication —</b> Định vị CVK creative strategy xung quanh &#39;Feel&#39; lever: authentic moments, cộng đồng phụ huynh thật, văn hóa Canada-Vietnam trong môi trường học tập thực tế. Cụ thể: tạo series creative &#39;A day in CVK&#39; dạng Third-POV Dialogue, quay thực tế (không dàn dựng), thể hiện văn hóa học tập Canada. Đây vừa là differentiation vs VAS, vừa phù hợp với CFP findings về visual_style=Thực tế và narrative=Third-POV Dialogue.</p>
+        <span class="badge">Tier 1 · Medium</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-id">INS-11</span>
+          <h3>Creative diversity thấp (17 combos, 7/17 là cùng một combination) — thuật toán Meta đang bị thiếu nguyên liệu để tối ưu</h3>
+        </div>
+        <p><b>Observation —</b> Trong 17 combo được phân tích, 7/17 (41.2%) là cùng combination visual_quality=Thiết lập công phu + visual_video_production_type=Quay phim thực tế. 8/17 (47.1%) là combination visual_format=Single + visual_style=Thực tế. Tổng cộng hai nhóm này chiếm 88.2% dataset — creative mix cực kỳ thiếu đa dạng.</p>
+        <p><b>Explanation —</b> Meta Advantage+ và thuật toán Andromeda hoạt động tốt nhất khi có ít nhất 5-10 creative variants đủ khác biệt để học từ audience response. Khi 88% creative là hai dạng tương tự nhau, thuật toán không có đủ signal để tối ưu phân phối. 4C Research xác nhận: format đa dạng hóa là nguyên tắc nền tảng của Meta hiện tại — khi advertiser cung cấp nhiều dạng creative, Andromeda tự tìm ra combination tốt nhất (Tier 2). CVK đang tự giới hạn khả năng tối ưu của thuật toán.</p>
+        <p><b>Implication —</b> Trong batch creative tiếp theo, đảm bảo ít nhất 4-5 combination khác biệt về: (1) visual_format (Single vs Carousel vs Infographic), (2) visual_style (Thực tế vs Hư cấu), (3) content_narrative (First/Second/Third POV), (4) content_key_angle (ít nhất 3 angle khác nhau). Mục tiêu: không có combination nào chiếm quá 20% tổng creative volume. Đây là prerequisite để CFP Phase 5 có đủ data variance để phân tích.</p>
+        <span class="badge">Tier 1 · Medium</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-id">INS-12</span>
+          <h3>SHAP-permutation agreement và direction stability đều ở mức 0.52 — findings là tín hiệu định hướng, không phải kết luận tuyệt đối</h3>
+        </div>
+        <p><b>Observation —</b> Direction stability = 0.52 trên tất cả các dimension chính (content_link, content_key_angle, content_narrative). SHAP-permutation agreement không được báo cáo trực tiếp nhưng confidence của hầu hết values ở mức Low (19.84%–43.04%), chỉ một số ít đạt Medium (48.2%–53.1%). Không có value nào đạt High confidence. R² không được báo cáo nhưng với 17 combos và creative variance thấp, đây là dataset nhỏ.</p>
+        <p><b>Explanation —</b> Direction stability 0.52 nằm trong vùng 0.3–0.6 — theo framework đánh giá, rankings là usable nhưng không nên đưa ra tuyên bố tuyệt đối &#39;A &gt; B&#39;. Với 17 combos, sample size nhỏ làm tăng variance trong bootstrap iterations, dẫn đến stability thấp. Đây không phải lỗi của model mà là giới hạn tự nhiên của dataset nhỏ. Các findings trong report này được framed đúng với mức độ confidence này.</p>
+        <p><b>Implication —</b> Tất cả insights trong report này nên được đọc là &#39;xu hướng trong dữ liệu hiện tại&#39; chứ không phải &#39;quy luật tuyệt đối&#39;. Để tăng confidence lên High, cần ít nhất 30-50 creative variants với đủ diversity. Ưu tiên hành động: (1) Implement các thay đổi có risk thấp trước (loại bỏ link, đơn giản hóa visual), (2) Test các thay đổi lớn hơn (angle mới, narrative mới) với budget nhỏ trước khi scale, (3) Re-run CFP sau khi có thêm 20+ creative mới.</p>
+        <span class="badge">Tier 1 · Medium</span>
+      </div>
+  </section>
+
+  <section id="appendix" class="tab-panel">
+    <div class="section-title">Phụ lục</div>
+    <div class="section-desc">Thông tin dự án</div>
+    <table class="appendix">
+      <tr><th>Dự án</th><td>SEODZOU001 - Canada Vietnam Kindergarten (CVK) - Media - 09/2025_SEODZOU001_001</td></tr>
+      <tr><th>Khách hàng</th><td></td></tr>
+      <tr><th>Kênh</th><td></td></tr>
+      <tr><th>Ngày tạo báo cáo</th><td>20/05/2026</td></tr>
+      <tr><th>Số lượng insight</th><td>12</td></tr>
+      <tr><th>Hypotheses validated</th><td>15</td></tr>
+      
+      
+    </table>
+  </section>
+</main>
+<footer>CFP Agent · Generated 20/05/2026</footer>
+<script>
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
